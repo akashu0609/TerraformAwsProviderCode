@@ -1,3 +1,19 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.12.0"
+    }
+  }
+
+  required_version = ">= 0.14.9"
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "us-east-1"
+}
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 21.0"
@@ -16,8 +32,8 @@ module "eks" {
     node_pools = ["general-purpose"]
   }
 
-  vpc_id     = "vpc-1234556abcdef"
-  subnet_ids = ["subnet-abcde012", "subnet-bcde012a", "subnet-fghi345a"]
+  vpc_id     = "vpc-09910b80a400169f3"
+  subnet_ids = ["subnet-00cf50a9795af9887", "subnet-093f5517bcc2a55a5", "subnet-0acbe2b5e88076e38"]
 
   tags = {
     Environment = "dev"
