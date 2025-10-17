@@ -15,5 +15,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "TypeName"
+  bucket = "TypeName"                   #name should be unique otherwise it will not create the s3 bucket
 }
